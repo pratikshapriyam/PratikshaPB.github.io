@@ -43,7 +43,7 @@
 
         /* Research Main Container */
         .research-container {
-            width: 80%;
+            width: 90%;
             max-width: 1000px;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
@@ -58,7 +58,7 @@
             margin-bottom: 20px;
         }
 
-        /* Research box styling */
+        /* Research Boxes */
         .research-box {
             width: 90%;
             background: white;
@@ -66,14 +66,22 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin: 20px auto;
-            text-align: left;
             display: flex;
             align-items: center;
         }
 
+        /* Alternating Layouts */
+        .research-box:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .research-box:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
         .research-text {
             width: 60%;
-            padding: 0 20px;
+            padding: 20px;
         }
 
         .research-img {
@@ -107,9 +115,21 @@
             color: black;
         }
 
-        /* Second container - Reverse layout */
-        .research-box.reverse {
-            flex-direction: row-reverse;
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .research-box {
+                flex-direction: column !important;
+                text-align: center;
+            }
+
+            .research-text,
+            .research-img {
+                width: 100%;
+            }
+
+            .research-img img {
+                max-width: 80%;
+            }
         }
 
     </style>
@@ -128,7 +148,7 @@
     <div class="research-container">
         <h1>My Research</h1>
 
-        <!-- Research Box 1: Hadley Circulation Dynamics (Image Right) -->
+        <!-- Research Box 1: Hadley Circulation Dynamics -->
         <div class="research-box">
             <div class="research-text">
                 <h2>1. Hadley Circulation Dynamics</h2>
@@ -137,7 +157,7 @@
                     I analyze its strength, variability, and interactions with tropical eddies and convection.
                 </p>
                 <p>
-                    Reference: <a href="https://ui.adsabs.harvard.edu/abs/2023AGUFM.A21J2432B/abstract/" target="_blank" style="color: purple; text-decoration: none;">AGU 2023 Abstract</a>
+                  Reference: <a href="https://ui.adsabs.harvard.edu/abs/2023AGUFM.A21J2432B/abstract/" target="_blank" style="color: purple; text-decoration: none;">AGU 2023 Abstract</a>
                 </p>
             </div>
             <div class="research-img">
@@ -146,12 +166,8 @@
             </div>
         </div>
 
-        <!-- Research Box 2: Influence of Tropical Waves (Image Left) -->
-        <div class="research-box reverse">
-            <div class="research-img">
-                <img src="conv.png" alt="Mixed Rossby-Gravity Waves">
-                <div class="caption">Figure 2: Propagation of MRG waves in the tropics</div>
-            </div>
+        <!-- Research Box 2: Influence of Tropical Waves (Image on Left) -->
+        <div class="research-box">
             <div class="research-text">
                 <h2>2. Influence of Tropical Waves</h2>
                 <p>
@@ -159,12 +175,16 @@
                     I investigate how these waves contribute to seasonal and interannual variability.
                 </p>
                 <p>    
-                    Reference: <a href="https://agupubs.onlinelibrary.wiley.com/journal/2169897X" target="_blank" style="color: purple; text-decoration: none;">JGR: Atmospheres</a>      
+                  Reference: <a href="https://agupubs.onlinelibrary.wiley.com/journal/2169897X" target="_blank" style="color: purple; text-decoration: none;">JGR: Atmospheres</a>      
                 </p>
+            </div>
+            <div class="research-img">
+                <img src="conv.png" alt="Mixed Rossby-Gravity Waves">
+                <div class="caption">Figure 2: Propagation of MRG waves in the tropics</div>
             </div>
         </div>
 
-        <!-- Research Box 3: Role of Moist Convection (Image Right) -->
+        <!-- Research Box 3: Role of Moist Convection -->
         <div class="research-box">
             <div class="research-text">
                 <h2>3. Role of Moist Convection</h2>
@@ -173,7 +193,7 @@
                     I study the mechanisms through which convective processes shape the Hadley cell dynamics.
                 </p>
                 <p>
-                    Reference: <a href="https://journals.ametsoc.org/view/journals/atsc/78/2/JAS-D-20-0274.1.xml" target="_blank" style="color: purple; text-decoration: none;">Journal of the Atmospheric Sciences</a>
+                  Reference: <a href="https://journals.ametsoc.org/view/journals/atsc/78/2/JAS-D-20-0274.1.xml" target="_blank" style="color: purple; text-decoration: none;">Journal of the Atmospheric Sciences</a>
                 </p>
             </div>
             <div class="research-img">
@@ -186,4 +206,5 @@
 
 </body>
 </html>
+
 
