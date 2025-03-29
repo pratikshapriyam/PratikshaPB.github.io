@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Pratiksha Priyam Baruah</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('forest-background.jpg') center/cover no-repeat;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            width: 100%;
+            background: purple;
+            padding: 15px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: yellow;
+            text-decoration: underline;
+        }
+
+        /* Research Main Container */
+        .research-container {
+            width: 80%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        /* Research box styling */
+        .research-box {
+            width: 90%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px auto;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+
+        .research-text {
+            width: 60%;
+            padding: 0 20px;
+        }
+
+        .research-img {
+            width: 40%;
+            text-align: center;
+        }
+
+        .research-img img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .caption {
+            font-size: 0.9em;
+            color: gray;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: purple;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: black;
+        }
+
+        /* Second container - Reverse layout */
+        .research-box.reverse {
+            flex-direction: row-reverse;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="extra.html">Miscellaneous</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Research Main Container -->
+    <div class="research-container">
+        <h1>My Research</h1>
+
+        <!-- Research Box 1: Hadley Circulation Dynamics (Image Right) -->
+        <div class="research-box">
+            <div class="research-text">
+                <h2>1. Hadley Circulation Dynamics</h2>
+                <p>
+                    My research focuses on understanding the large-scale atmospheric circulation, particularly the Hadley circulation. 
+                    I analyze its strength, variability, and interactions with tropical eddies and convection.
+                </p>
+                <p>
+                    Reference: <a href="https://ui.adsabs.harvard.edu/abs/2023AGUFM.A21J2432B/abstract/" target="_blank" style="color: purple; text-decoration: none;">AGU 2023 Abstract</a>
+                </p>
+            </div>
+            <div class="research-img">
+                <img src="reghc_corr_djf.png" alt="Hadley Circulation">
+                <div class="caption">Figure 1: Schematic of the Hadley Cell</div>
+            </div>
+        </div>
+
+        <!-- Research Box 2: Influence of Tropical Waves (Image Left) -->
+        <div class="research-box reverse">
+            <div class="research-img">
+                <img src="conv.png" alt="Mixed Rossby-Gravity Waves">
+                <div class="caption">Figure 2: Propagation of MRG waves in the tropics</div>
+            </div>
+            <div class="research-text">
+                <h2>2. Influence of Tropical Waves</h2>
+                <p>
+                    Tropical waves, such as the Mixed Rossby-Gravity (MRG) waves, can impact the regional Hadley circulation. 
+                    I investigate how these waves contribute to seasonal and interannual variability.
+                </p>
+                <p>    
+                    Reference: <a href="https://agupubs.onlinelibrary.wiley.com/journal/2169897X" target="_blank" style="color: purple; text-decoration: none;">JGR: Atmospheres</a>      
+                </p>
+            </div>
+        </div>
+
+        <!-- Research Box 3: Role of Moist Convection (Image Right) -->
+        <div class="research-box">
+            <div class="research-text">
+                <h2>3. Role of Moist Convection</h2>
+                <p>
+                    Moist convection plays a crucial role in modulating large-scale atmospheric circulations. 
+                    I study the mechanisms through which convective processes shape the Hadley cell dynamics.
+                </p>
+                <p>
+                    Reference: <a href="https://journals.ametsoc.org/view/journals/atsc/78/2/JAS-D-20-0274.1.xml" target="_blank" style="color: purple; text-decoration: none;">Journal of the Atmospheric Sciences</a>
+                </p>
+            </div>
+            <div class="research-img">
+                <img src="waf.png" alt="Moist Convection">
+                <div class="caption">Figure 3: Moist convection process in the tropics</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
+
