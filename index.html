@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Pratiksha Priyam Baruah</title>
     <style>
         body {
             font-family: 'Poppins', Arial, sans-serif;
@@ -14,16 +14,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        /* Floating GIF at Bottom */
-        .floating-gif {
-            position: fixed;
-            bottom: 10px;  /* Moves it to the bottom */
-            left: 10px;
-            width: 120px;
-            height: auto;
-            z-index: 1000;
         }
 
         /* Navigation Bar */
@@ -43,8 +33,6 @@
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
-            display: inline-block;
-            padding: 5px;
             transition: 0.3s;
         }
 
@@ -58,22 +46,22 @@
             width: 90%;
             max-width: 1000px;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            padding: 30px;
+            padding: 40px;
             margin-top: 80px;
-            position: relative;
+            text-align: center;
         }
 
-        /* Left Section */
-        .left-section {
+        /* Profile Section */
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            text-align: center;
-            margin-bottom: 20px;
         }
 
         .profile-img {
@@ -89,8 +77,13 @@
             margin: 10px 0;
         }
 
+        /* Contact Section */
+        .contact {
+            margin-top: 20px;
+        }
+
         .contact p {
-            font-size: 1em;
+            font-size: 1.1em;
             margin: 5px 0;
         }
 
@@ -106,19 +99,20 @@
             color: black;
         }
 
-        /* Right Section */
-        .right-section {
-            width: 100%;
+        /* Research Description */
+        .description {
             text-align: center;
+            padding: 20px;
         }
 
         h2 {
-            font-size: 1.5em;
+            font-size: 1.8em;
             margin-bottom: 10px;
+            color: purple;
         }
 
         p {
-            font-size: 1.1em;
+            font-size: 1.2em;
             color: black;
             line-height: 1.6;
         }
@@ -130,24 +124,44 @@
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            margin-top: 20px;
+            padding: 30px;
+            margin-top: 30px;
             text-align: center;
         }
 
-        /* Responsive Design */
-        @media (min-width: 768px) {
+        .publications-container h2 {
+            text-align: center;
+        }
+
+        /* GIF Container (Placed at the Bottom) */
+        .gif-container {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .gif-container img {
+            width: 150px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
             .main-container {
-                flex-wrap: nowrap;
+                width: 95%;
+                padding: 20px;
             }
-            .left-section {
-                width: 35%;
-                text-align: center;
-                margin-bottom: 0;
+
+            .profile-img {
+                width: 120px;
             }
-            .right-section {
-                width: 60%;
-                text-align: left;
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1.1em;
             }
         }
     </style>
@@ -164,8 +178,8 @@
 
     <!-- Main Container -->
     <div class="main-container">
-        <!-- Left Section -->
-        <div class="left-section">
+        <!-- Profile Section -->
+        <div class="profile-container">
             <img src="profile.jpg" alt="My Photo" class="profile-img">
             <div class="name">Pratiksha Priyam Baruah</div>
 
@@ -176,22 +190,19 @@
             </div>
         </div>
 
-        <!-- Right Section -->
-        <div class="right-section">
+        <!-- Research Description -->
+        <div class="description">
             <h2>Hi there!</h2>
             <p>
                 Welcome to my webpage. I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank" style="color: purple; text-decoration: none;">IISER Pune</a>, 
-                working under the supervision of <a href="https://www.iiserpune.ac.in/research/ecs/faculty/neena-joseph-mani" target="_blank" style="color: purple; text-decoration: none;">Dr. Neena Joseph Mani</a>. 
+                working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank" style="color: purple; text-decoration: none;">Dr. Neena Joseph Mani</a>. 
                 My research focuses on the large-scale atmospheric circulation and its dynamics.
             </p>
 
             <p>
                 Moist convection plays a crucial role in shaping the strength and variability of the Hadley circulation. Given that tropical moist convection 
                 operates across multiple spatial and temporal scales, a detailed investigation into the influence of different tropical eddies on regional 
-                Hadley cell dynamics is essential.
-            </p>
-            <p>
-                Click <a href="research.html" style="color: purple; text-decoration: none;">here</a> to know more about my research interests.
+                Hadley cell dynamics is essential. 
             </p>
         </div>
     </div>
@@ -202,9 +213,10 @@
         <p>Coming soon...</p> <!-- Add your publications here -->
     </div>
 
-    <!-- Floating GIF at the Bottom -->
-    <img src="cloud2.gif" alt="Animated GIF" class="floating-gif">
+    <!-- Floating GIF at the Bottom (Not Hovering) -->
+    <div class="gif-container">
+        <img src="cloud2.gif" alt="Animated GIF">
+    </div>
 
 </body>
 </html>
-
