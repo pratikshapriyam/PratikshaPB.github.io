@@ -16,12 +16,12 @@
             align-items: center;
         }
 
-        /* Floating GIF */
+        /* Floating GIF at Bottom */
         .floating-gif {
             position: fixed;
-            top: 10px;
+            bottom: 10px;  /* Moves it to the bottom */
             left: 10px;
-            width: 120px; /* Adjusted size for mobile */
+            width: 120px;
             height: auto;
             z-index: 1000;
         }
@@ -154,9 +154,6 @@
 </head>
 <body>
 
-    <!-- Floating GIF -->
-    <img src="cloud2.gif" alt="Animated GIF" class="floating-gif">
-
     <!-- Navigation Bar -->
     <div class="navbar">
         <a href="index.html">Home</a>
@@ -204,6 +201,9 @@
         <h2>Publications</h2>
         <p>Coming soon...</p> <!-- Add your publications here -->
     </div>
+
+    <!-- Floating GIF at the Bottom -->
+    <img src="cloud2.gif" alt="Animated GIF" class="floating-gif">
 
 </body>
 </html>
