@@ -4,76 +4,132 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pratiksha Priyam Baruah</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Poppins', Arial, sans-serif;
       margin: 0;
-      padding: 20px;
-      background: url('forest-background.jpg') center/cover no-repeat;
-      color: black;
+      padding: 40px;
+      background: linear-gradient(to bottom, #e0f7fa, #b2ebf2), url('forest-background.jpg') center/cover no-repeat;
+      color: #333;
+      line-height: 1.6;
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 30px;
     }
 
     .profile {
-      text-align: left;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 10px;
+      background: linear-gradient(135deg, #ffffff, #f0f4f8);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: sticky;
+      top: 40px;
     }
 
     .profile img {
       width: 100%;
-      max-width: 250px;
-      border-radius: 10px;
-      margin-bottom: 10px;
+      max-width: 220px;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .profile img:hover {
+      transform: scale(1.05);
     }
 
     .profile .name {
-      font-size: 2em;
-      font-weight: bold;
+      font-size: 2.2em;
+      font-weight: 700;
+      color: #6a1b9a;
       margin: 10px 0;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .profile .contact p {
       font-size: 1.1em;
-      margin: 5px 0;
+      margin: 8px 0;
     }
 
     .profile .contact a {
       text-decoration: none;
-      color: purple;
+      color: #0288d1;
+      transition: color 0.3s ease;
+    }
+
+    .profile .contact a:hover {
+      color: #6a1b9a;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
     .about, .publications {
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 10px;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border-left: 5px solid #6a1b9a;
     }
 
     h2 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-      color: purple;
+      font-size: 2em;
+      font-weight: 600;
+      color: #6a1b9a;
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      width: 50px;
+      height: 3px;
+      background: #0288d1;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
     }
 
     p {
       font-size: 1.2em;
-      line-height: 1.6;
+      color: #555;
     }
 
     ul {
       font-size: 1.2em;
-      line-height: 1.6;
+      color: #555;
       margin: 0;
-      padding-left: 20px;
+      padding-left: 25px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    li:hover {
+      transform: translateX(10px);
+    }
+
+    a {
+      color: #0288d1;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -89,20 +145,23 @@
       </div>
     </div>
 
-    <!-- About Me and Research Section -->
-    <div class="about">
-      <h2>About Me</h2>
-      <p>Welcome to my webpage! I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank" style="color: purple; text-decoration: none;">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank" style="color: purple; text-decoration: none;">Dr. Neena Joseph Mani</a>. My research focuses on the large-scale atmospheric circulation and its dynamics.</p>
-    </div>
+    <!-- Content Sections -->
+    <div class="content">
+      <!-- About Me and Research Section -->
+      <div class="about">
+        <h2>About Me</h2>
+        <p>Welcome to my webpage! I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My research explores the fascinating dynamics of large-scale atmospheric circulation.</p>
+      </div>
 
-    <!-- Publications Section -->
-    <div class="publications">
-      <h2>Publications</h2>
-      <ul>
-        <li>Example Publication 1: "Title of Paper," Journal Name, Year.</li>
-        <li>Example Publication 2: "Another Title," Journal Name, Year.</li>
-        <!-- Add your real publications here -->
-      </ul>
+      <!-- Publications Section -->
+      <div class="publications">
+        <h2>Publications</h2>
+        <ul>
+          <li>Example Publication 1: "Title of Paper," Journal Name, Year.</li>
+          <li>Example Publication 2: "Another Title," Journal Name, Year.</li>
+          <!-- Replace with your actual publications -->
+        </ul>
+      </div>
     </div>
   </div>
 </body>
