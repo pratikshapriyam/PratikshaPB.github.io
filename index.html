@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,55 +15,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 80px; /* Space for the fixed elements */
-    }
-
-    /* Hamburger Icon */
-    .hamburger {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 25px;
-      cursor: pointer;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-
-    .hamburger div {
-      width: 30px;
-      height: 5px;
-      background-color: purple;
-      border-radius: 5px;
-    }
-
-    /* Dropdown Navigation */
-    .navbar {
-      position: absolute;
-      top: 60px; /* Positioned below the hamburger icon */
-      left: 20px;
-      background: purple;
-      padding: 10px 0;
-      border-radius: 5px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      display: none; /* Hidden by default */
-      width: 200px;
-      z-index: 1000;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      padding: 10px 20px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .navbar a:hover {
-      color: yellow;
-      text-decoration: underline;
     }
 
     /* Main Container */
@@ -79,7 +28,7 @@
       padding: 40px;
     }
 
-    /* Profile Container - Separate container for photo, name, and contact */
+    /* Profile Container */
     .profile-container {
       width: 40%;
       background: rgba(255, 255, 255, 0.9);
@@ -88,7 +37,6 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin-right: 10px;
       margin-left: 0px;
-      margin-top: 0px;
       text-align: center;
     }
 
@@ -110,28 +58,14 @@
       margin: 5px 0;
     }
 
-    .contact a {
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .contact a:hover {
-      text-decoration: underline;
-      color: black;
-    }
-
-    /* Content Section - Right side content */
+    /* Content Section */
     .content-container {
-      width: 65%; /* Takes up the remaining space */
+      width: 65%;
       text-align: left;
       background: rgba(255, 255, 255, 0.9);
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-right: 0px;
-  
     }
 
     h2 {
@@ -157,132 +91,51 @@
       text-align: center;
     }
 
-    .publications-container h2 {
-      text-align: center;
-    }
-
-    /* GIF Container (Placed at the Bottom) */
-    .gif-container {
-      width: 100%;
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .gif-container img {
-      width: 150px; /* Adjust size as needed */
-      height: auto;
-    }
-
     /* Mobile Responsive */
     @media (max-width: 768px) {
       .main-container {
-        flex-direction: column; /* Stack sections on smaller screens */
+        flex-direction: column;
         width: 95%;
         padding: 20px;
       }
 
       .profile-container {
-        width: 100%; /* Profile container takes full width on mobile */
-        margin-right: 0; /* No space between sections */
-        margin-bottom: 30px; /* Add space between profile and description */
+        width: 100%;
+        margin-bottom: 30px;
       }
 
       .content-container {
-        width: 100%; /* Content container takes full width on mobile */
-      }
-
-      h2 {
-        font-size: 1.5em;
-      }
-
-      p {
-        font-size: 1.1em;
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Hamburger Menu Icon -->
-  <div class="hamburger" onclick="toggleNavbar()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-
-  <!-- Dropdown Navigation Menu -->
-  <div class="navbar" id="navbar">
-    <a href="index.html">Home</a>
-    <a href="research.html">Research</a>
-    <a href="extra.html">Miscellaneous</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
   <!-- Main Container -->
   <div class="main-container">
-    <!-- Profile Container (Photo, Name, Contact Details) -->
+    <!-- Profile Container -->
     <div class="profile-container">
       <img src="profile.jpg" alt="My Photo" class="profile-img" />
       <div class="name">Pratiksha Priyam Baruah</div>
-      <!-- Contact Details -->
       <div class="contact">
         <p>Email: <a href="mailto:pratiksha.baruah@students.iiserpune.ac.in">pratiksha.baruah@students.iiserpune.ac.in</a></p>
         <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
       </div>
     </div>
 
-    <!-- Content Container (Research, Publications, etc.) -->
+    <!-- Content Container -->
     <div class="content-container">
       <h2>Hi there!</h2>
-      <p>
-        Welcome to my webpage. I am a 5th-year PhD student at
-        <a href="https://www.iiserpune.ac.in/" target="_blank" style="color: purple; text-decoration: none;">IISER Pune</a>,
-        working under the supervision of
-        <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank" style="color: purple; text-decoration: none;">Dr. Neena Joseph Mani</a>.
-        My research focuses on the large-scale atmospheric circulation and its dynamics.
-      </p>
-
-      <p>
-        Moist convection plays a crucial role in shaping the strength and variability of the Hadley circulation. Given that tropical moist convection
-        operates across multiple spatial and temporal scales, a detailed investigation into the influence of different tropical eddies on regional
-        Hadley cell dynamics is essential.
-      </p>
-
-      <!-- Publications Section -->
+      <p>Welcome to my webpage. I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank" style="color: purple; text-decoration: none;">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank" style="color: purple; text-decoration: none;">Dr. Neena Joseph Mani</a>. My research focuses on the large-scale atmospheric circulation and its dynamics.</p>
+      <p>Moist convection plays a crucial role in shaping the strength and variability of the Hadley circulation. Given that tropical moist convection operates across multiple spatial and temporal scales, a detailed investigation into the influence of different tropical eddies on regional Hadley cell dynamics is essential.</p>
       <div class="publications-container">
         <h2>Publications</h2>
         <p>Coming soon...</p>
       </div>
     </div>
   </div>
-
-  <!-- Floating GIF at the Bottom -->
-  <div class="gif-container">
-    <img src="cloud2.gif" alt="Animated GIF" />
-  </div>
-
-  <script>
-    // JavaScript to toggle the dropdown navigation visibility
-    function toggleNavbar() {
-      const navbar = document.getElementById("navbar");
-      // Toggle display between 'none' and 'block'
-      if (navbar.style.display === "block") {
-        navbar.style.display = "none";
-      } else {
-        navbar.style.display = "block";
-      }
-    }
-
-    // Optional: Hide the navbar when clicking anywhere outside of it
-    document.addEventListener("click", function(event) {
-      const navbar = document.getElementById("navbar");
-      const hamburger = document.querySelector(".hamburger");
-      // If the click is not on the navbar or the hamburger icon, hide the menu
-      if (!navbar.contains(event.target) && !hamburger.contains(event.target)) {
-        navbar.style.display = "none";
-      }
-    });
-  </script>
 </body>
 </html>
+
 
 
