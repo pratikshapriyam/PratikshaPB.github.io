@@ -10,7 +10,7 @@
       margin: 0;
       padding: 20px;
       background: url('forest-background.jpg') center/cover no-repeat;
-      color: green;
+      color: black;
       display: flex;
       flex-direction: row;
       align-items: flex-start;
@@ -38,6 +38,19 @@
     .profile .contact p {
       font-size: 1.1em;
       margin: 5px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .profile .contact a {
+      text-decoration: none;
+      color: black;
+      margin-left: 8px;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
     }
 
     .content {
@@ -63,8 +76,14 @@
     <img src="profile.jpg" alt="My Photo" />
     <div class="name">Pratiksha Priyam Baruah</div>
     <div class="contact">
-      <p>Email: <a href="mailto:pratiksha.baruah@students.iiserpune.ac.in">pratiksha.baruah@students.iiserpune.ac.in</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
+      <p>
+        <img src="gmail-icon.png" alt="Gmail" class="icon" />
+        <a href="mailto:pratiksha.baruah@students.iiserpune.ac.in">pratiksha.baruah@students.iiserpune.ac.in</a>
+      </p>
+      <p>
+        <img src="linkedin-icon.png" alt="LinkedIn" class="icon" />
+        <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a>
+      </p>
     </div>
   </div>
 
