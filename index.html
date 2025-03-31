@@ -5,115 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pratiksha Priyam Baruah</title>
   <style>
-    /* Basic Body Styling */
     body {
       font-family: 'Poppins', Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 20px;
       background: url('forest-background.jpg') center/cover no-repeat;
       color: black;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* Navigation Menu */
-    .navbar {
-      width: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 10px 0;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    .navbar li {
-      position: relative;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-
-    .navbar a {
-      text-decoration: none;
-      color: black;
-      font-size: 1.2em;
-    }
-
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 40px;
-      left: 0;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .navbar li:hover .dropdown {
-      display: block;
-    }
-
-    .dropdown a {
-      display: block;
-      padding: 8px 15px;
-    }
-
-    /* Main Layout */
-    .main-container {
-      display: flex;
       flex-direction: row;
       align-items: flex-start;
-      width: 90%;
-      max-width: 1100px;
-      margin-top: 20px;
-      padding: 40px;
     }
 
-    /* Profile Container */
-    .profile-container {
+    .profile {
       width: 30%;
-      background: rgba(255, 255, 255, 0.9);
+      text-align: left;
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
     }
 
-    .profile-img {
+    .profile img {
       width: 100%;
       max-width: 250px;
       border-radius: 10px;
       margin-bottom: 10px;
     }
 
-    .name {
+    .profile .name {
       font-size: 1.8em;
       font-weight: bold;
       margin: 10px 0;
     }
 
-    .contact p {
+    .profile .contact p {
       font-size: 1.1em;
       margin: 5px 0;
     }
 
-    /* Content Section */
-    .content-container {
+    .content {
       width: 65%;
-      text-align: left;
-      background: rgba(255, 255, 255, 0.9);
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-left: 5%;
     }
 
     h2 {
@@ -127,82 +56,21 @@
       color: black;
       line-height: 1.6;
     }
-
-    /* Publications Section */
-    .publications-container {
-      width: 90%;
-      max-width: 1100px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      padding: 30px;
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .main-container {
-        flex-direction: column;
-        width: 95%;
-        padding: 20px;
-      }
-
-      .profile-container {
-        width: 100%;
-        margin-bottom: 30px;
-      }
-
-      .content-container {
-        width: 100%;
-        margin-left: 0;
-      }
-
-      .publications-container {
-        width: 95%;
-      }
-    }
   </style>
 </head>
 <body>
-  <!-- Navigation Menu -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li>
-        Research
-        <div class="dropdown">
-          <a href="#">Projects</a>
-          <a href="#">Publications</a>
-        </div>
-      </li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Main Container -->
-  <div class="main-container">
-    <!-- Profile Container -->
-    <div class="profile-container">
-      <img src="profile.jpg" alt="My Photo" class="profile-img" />
-      <div class="name">Pratiksha Priyam Baruah</div>
-      <div class="contact">
-        <p>Email: <a href="mailto:pratiksha.baruah@students.iiserpune.ac.in">pratiksha.baruah@students.iiserpune.ac.in</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
-      </div>
-    </div>
-
-    <!-- Content Container -->
-    <div class="content-container">
-      <h2>Hi there!</h2>
-      <p>Welcome to my webpage. I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank" style="color: purple; text-decoration: none;">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank" style="color: purple; text-decoration: none;">Dr. Neena Joseph Mani</a>. My research focuses on the large-scale atmospheric circulation and its dynamics.</p>
+  <div class="profile">
+    <img src="profile.jpg" alt="My Photo" />
+    <div class="name">Pratiksha Priyam Baruah</div>
+    <div class="contact">
+      <p>Email: <a href="mailto:pratiksha.baruah@students.iiserpune.ac.in">pratiksha.baruah@students.iiserpune.ac.in</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
     </div>
   </div>
 
-  <!-- Publications Section -->
-  <div class="publications-container">
-    <h2>Publications</h2>
-    <p>Coming soon...</p>
+  <div class="content">
+    <h2>Hi there!</h2>
+    <p>Welcome to my webpage. I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank" style="color: purple; text-decoration: none;">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank" style="color: purple; text-decoration: none;">Dr. Neena Joseph Mani</a>. My research focuses on the large-scale atmospheric circulation and its dynamics.</p>
   </div>
 </body>
 </html>
