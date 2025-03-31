@@ -15,7 +15,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 80px; /* Space for the fixed elements */
     }
 
     /* Main Container */
@@ -25,6 +24,7 @@
       align-items: flex-start;
       width: 90%;
       max-width: 1100px;
+      margin-top: 0px;
       padding: 40px;
     }
 
@@ -35,6 +35,8 @@
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-right: 10px;
+      margin-left: 0px;
       text-align: center;
     }
 
@@ -68,6 +70,7 @@
 
     h2 {
       font-size: 1.8em;
+      margin-bottom: 10px;
       color: purple;
     }
 
@@ -77,18 +80,18 @@
       line-height: 1.6;
     }
 
-    /* Publications Section (Separate) */
+    /* Publications Section */
     .publications-container {
-      width: 90%;
-      max-width: 1100px;
+      width: 100%;
       background: rgba(255, 255, 255, 0.9);
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       padding: 30px;
-      margin: 40px auto; /* Center it below main content */
+      margin-top: 30px;
       text-align: center;
     }
 
+    /* Mobile Responsive */
     @media (max-width: 768px) {
       .main-container {
         flex-direction: column;
@@ -123,22 +126,17 @@
     <!-- Content Container -->
     <div class="content-container">
       <h2>Hi there!</h2>
-      <p>Welcome to my webpage. I am a 5th-year PhD student at
-        <a href="https://www.iiserpune.ac.in/" target="_blank" style="color: purple; text-decoration: none;">IISER Pune</a>,
-        working under the supervision of
-        <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank" style="color: purple; text-decoration: none;">Dr. Neena Joseph Mani</a>.
-      </p>
-      <p>My research focuses on large-scale atmospheric circulation and its dynamics.</p>
+      <p>Welcome to my webpage. I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank" style="color: purple; text-decoration: none;">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank" style="color: purple; text-decoration: none;">Dr. Neena Joseph Mani</a>. My research focuses on the large-scale atmospheric circulation and its dynamics.</p>
+      <p>Moist convection plays a crucial role in shaping the strength and variability of the Hadley circulation. Given that tropical moist convection operates across multiple spatial and temporal scales, a detailed investigation into the influence of different tropical eddies on regional Hadley cell dynamics is essential.</p>
+      <div class="publications-container">
+        <h2>Publications</h2>
+        <p>Coming soon...</p>
+      </div>
     </div>
-  </div>
-
-  <!-- Publications Section (Separate) -->
-  <div class="publications-container">
-    <h2>Publications</h2>
-    <p>Coming soon...</p>
   </div>
 </body>
 </html>
+
 
 
 
