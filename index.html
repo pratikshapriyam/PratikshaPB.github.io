@@ -9,131 +9,83 @@
     body {
       font-family: 'Poppins', Arial, sans-serif;
       margin: 0;
-      padding: 40px;
-      background: linear-gradient(to bottom,  #e0e0e0, #9e9e9e), url('forest-background.jpg') center/cover no-repeat;
+      padding: 20px;
+      background: linear-gradient(to bottom, #e0e0e0, #9e9e9e);
       color: #333;
       line-height: 1.6;
     }
 
+    .navbar {
+      background: #6a1b9a;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      font-size: 1.2em;
+      transition: background 0.3s ease;
+    }
+
+    .navbar a:hover, .dropdown:hover .dropbtn {
+      background: #4a148c;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #6a1b9a;
+      padding: 12px 16px;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
     .container {
-      max-width: 1500px;
-      margin: 0 auto;
+      max-width: 1200px;
+      margin: 20px auto;
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 20px;
     }
-
-    .profile {
-      background: linear-gradient(135deg, #ffffff, #f0f4f8);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      position: sticky;
-      top: 40px;
-    }
-
-    .profile img {
-      width: 100%;
-      max-width: 220px;
-      border-radius: 50%;
-      border: 5px solid #fff;
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .profile img:hover {
-      transform: scale(1.05);
-    }
-
-    .profile .name {
-      font-size: 2.2em;
-      font-weight: 700;
-      color: #6a1b9a;
-      margin: 10px 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .profile .contact p {
-      font-size: 1.1em;
-      margin: 8px 0;
-    }
-
-    .profile .contact a {
-      text-decoration: none;
-      color: #0288d1;
-      transition: color 0.3s ease;
-    }
-
-    .profile .contact a:hover {
-      color: #6a1b9a;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .about, .publications {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      border-left: 5px solid #6a1b9a;
-    }
-
-    h2 {
-      font-size: 2em;
-      font-weight: 600;
-      color:  #6a1b9a;
-      margin-bottom: 15px;
-      position: relative;
-    }
-
-    h2::after {
-      content: '';
-      width: 50px;
-      height: 3px;
-      background: #0288d1;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-    }
-
-    p {
-      font-size: 1.2em;
-      color: #555;
-    }
-
-    ul {
-      font-size: 1.2em;
-      color: #555;
-      margin: 0;
-      padding-left: 25px;
-    }
-
-    li {
-      margin-bottom: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    li:hover {
-      transform: translateX(10px);
-    }
-
-    a {
-      color:  #6a1b9a;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
+
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <div class="dropdown">
+      <a href="#research" class="dropbtn">Research</a>
+      <div class="dropdown-content">
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+      </div>
+    </div>
+    <a href="#miscellaneous">Miscellaneous</a>
+  </div>
+
   <div class="container">
     <!-- Profile Section -->
     <div class="profile">
@@ -147,23 +99,20 @@
 
     <!-- Content Sections -->
     <div class="content">
-      <!-- About Me and Research Section -->
       <div class="about">
         <h2>About Me</h2>
         <p>Welcome to my webpage! I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My research explores the fascinating dynamics of large-scale atmospheric circulation.</p>
-        <p> To know more about my research interests, click here</p>
+        <p>To know more about my research interests, click here.</p>
       </div>
-
-      <!-- Publications Section -->
-      <div class="publications">
+      <div class="publications" id="publications">
         <h2>Publications</h2>
         <ul>
           <li>Example Publication 1: "Title of Paper," Journal Name, Year.</li>
           <li>Example Publication 2: "Another Title," Journal Name, Year.</li>
-          <!-- Replace with your actual publications -->
         </ul>
       </div>
     </div>
   </div>
+
 </body>
 </html>
