@@ -46,7 +46,7 @@
         /* Main Container */
         .main-container {
             display: flex;
-            flex-direction: row; /* Row layout for left and right content */
+            flex-direction: row;
             align-items: flex-start;
             width: 90%;
             max-width: 1000px;
@@ -54,13 +54,15 @@
             padding: 40px;
         }
 
-        /* Profile Section */
+        /* Profile Container - Separate container for photo, name, and contact */
         .profile-container {
             width: 30%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-right: 30px; /* Space between profile and other content */
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-right: 30px;
+            text-align: center;
         }
 
         .profile-img {
@@ -93,8 +95,8 @@
             color: black;
         }
 
-        /* Description Section */
-        .description {
+        /* Content Section - Right side content */
+        .content-container {
             width: 65%; /* Takes up the remaining space */
             text-align: left;
         }
@@ -147,13 +149,13 @@
             }
 
             .profile-container {
-                width: 100%;
+                width: 100%; /* Profile container takes full width on mobile */
                 margin-right: 0; /* No space between sections */
                 margin-bottom: 30px; /* Add space between profile and description */
             }
 
-            .description {
-                width: 100%;
+            .content-container {
+                width: 100%; /* Content container takes full width on mobile */
             }
 
             h2 {
@@ -178,7 +180,7 @@
 
     <!-- Main Container -->
     <div class="main-container">
-        <!-- Profile Section -->
+        <!-- Profile Container (Photo, Name, Contact Details) -->
         <div class="profile-container">
             <img src="profile.jpg" alt="My Photo" class="profile-img">
             <div class="name">Pratiksha Priyam Baruah</div>
@@ -190,8 +192,8 @@
             </div>
         </div>
 
-        <!-- Description Section -->
-        <div class="description">
+        <!-- Content Container (Research, Publications, etc.) -->
+        <div class="content-container">
             <h2>Hi there!</h2>
             <p>
                 Welcome to my webpage. I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank" style="color: purple; text-decoration: none;">IISER Pune</a>, 
@@ -204,13 +206,13 @@
                 operates across multiple spatial and temporal scales, a detailed investigation into the influence of different tropical eddies on regional 
                 Hadley cell dynamics is essential. 
             </p>
-        </div>
-    </div>
 
-    <!-- Publications Section -->
-    <div class="publications-container">
-        <h2>Publications</h2>
-        <p>Coming soon...</p> <!-- Add your publications here -->
+            <!-- Publications Section -->
+            <div class="publications-container">
+                <h2>Publications</h2>
+                <p>Coming soon...</p> <!-- Add your publications here -->
+            </div>
+        </div>
     </div>
 
     <!-- Floating GIF at the Bottom (Not Hovering) -->
@@ -220,4 +222,5 @@
 
 </body>
 </html>
+
 
