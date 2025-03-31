@@ -12,8 +12,10 @@
             background: url('forest-background.jpg') center/cover no-repeat;
             color: black;
             display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
             flex-direction: column;
-            align-items: center;
         }
 
         /* Navigation Bar */
@@ -43,25 +45,22 @@
 
         /* Main Container */
         .main-container {
+            display: flex;
+            flex-direction: row; /* Row layout for left and right content */
+            align-items: flex-start;
             width: 90%;
             max-width: 1000px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            padding: 40px;
             margin-top: 80px;
-            text-align: center;
+            padding: 40px;
         }
 
         /* Profile Section */
         .profile-container {
+            width: 30%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 100%;
+            margin-right: 30px; /* Space between profile and other content */
         }
 
         .profile-img {
@@ -75,11 +74,6 @@
             font-size: 1.8em;
             font-weight: bold;
             margin: 10px 0;
-        }
-
-        /* Contact Section */
-        .contact {
-            margin-top: 20px;
         }
 
         .contact p {
@@ -99,10 +93,10 @@
             color: black;
         }
 
-        /* Research Description */
+        /* Description Section */
         .description {
-            text-align: center;
-            padding: 20px;
+            width: 65%; /* Takes up the remaining space */
+            text-align: left;
         }
 
         h2 {
@@ -119,8 +113,7 @@
 
         /* Publications Section */
         .publications-container {
-            width: 90%;
-            max-width: 1000px;
+            width: 100%;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -148,12 +141,19 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .main-container {
+                flex-direction: column; /* Stack sections on smaller screens */
                 width: 95%;
                 padding: 20px;
             }
 
-            .profile-img {
-                width: 120px;
+            .profile-container {
+                width: 100%;
+                margin-right: 0; /* No space between sections */
+                margin-bottom: 30px; /* Add space between profile and description */
+            }
+
+            .description {
+                width: 100%;
             }
 
             h2 {
@@ -190,7 +190,7 @@
             </div>
         </div>
 
-        <!-- Research Description -->
+        <!-- Description Section -->
         <div class="description">
             <h2>Hi there!</h2>
             <p>
@@ -220,3 +220,4 @@
 
 </body>
 </html>
+
