@@ -9,10 +9,45 @@
     body {
       font-family: 'Poppins', Arial, sans-serif;
       margin: 0;
-      padding: 40px;
+      padding: 0;
       background: linear-gradient(to bottom,  #e0e0e0, #9e9e9e), url('forest-background.jpg') center/cover no-repeat;
       color: #333;
       line-height: 1.6;
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #6a1b9a;
+      color: white;
+      padding-top: 40px;
+      padding-left: 20px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #4a148c;
+    }
+
+    .main {
+      margin-left: 240px;
+      padding: 40px;
+      width: calc(100% - 240px);
     }
 
     .container {
@@ -124,7 +159,7 @@
     }
 
     a {
-      color: #0288d1;
+      color: #6a1b9a;
       text-decoration: none;
     }
 
@@ -134,36 +169,44 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Profile Section -->
-    <div class="profile">
-      <img src="profile.jpg" alt="My Photo" />
-      <div class="name">Pratiksha Priyam Baruah</div>
-      <div class="contact">
-        <p>Email: <a href="mailto:pratiksha.baruah@students.iiserpune.ac.in">pratiksha.baruah@students.iiserpune.ac.in</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
-      </div>
-    </div>
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <a href="#">Home</a>
+    <a href="#about">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#misc">Miscellaneous</a>
+  </div>
 
-    <!-- Content Sections -->
-    <div class="content">
-      <!-- About Me and Research Section -->
-      <div class="about">
-        <h2>About Me</h2>
-        <p>Welcome to my webpage! I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My PhD research primarily involves enhancing our understanding of the dynamics of regional Hadley Cells across different geographical domains. Particularly I investigate the influence of different large scale climate modes and various tropical, extratropical factors towards their variations.  </p>
-        <p> To know more about my research interests click here</p>
-      
+  <!-- Main Content -->
+  <div class="main">
+    <div class="container">
+      <!-- Profile Section -->
+      <div class="profile">
+        <img src="profile.jpg" alt="My Photo" />
+        <div class="name">Pratiksha Priyam Baruah</div>
+        <div class="contact">
+          <p>Email: <a href="mailto:pratiksha.baruah@students.iiserpune.ac.in">pratiksha.baruah@students.iiserpune.ac.in</a></p>
+          <p>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></p>
+        </div>
       </div>
 
-      
-      <!-- Publications Section -->
-      <div class="publications">
-        <h2>Publications</h2>
-        <ul>
-          <li>Pratiksha P. Baruah, J.M. Neena, and E Suhas (2025): The Role of Tropical Synoptic-Scale Disturbances in Modulating the Strength of East Pacific Hadley Circulation, Journal of Geophysical Research: Atmospheres (Aceepted).</li>
-          <li>Pratiksha P. Baruah, J.M. Neena: Understanding the variabilities in strength and extent of regional Hadley circulations (Manuscript under prep.)</li>
-          <!-- Replace with your actual publications -->
-        </ul>
+      <!-- Content Sections -->
+      <div class="content">
+        <!-- About Me and Research Section -->
+        <div class="about" id="about">
+          <h2>About Me</h2>
+          <p>Welcome to my webpage! I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My PhD research primarily involves enhancing our understanding of the dynamics of regional Hadley Cells across different geographical domains. Particularly I investigate the influence of different large scale climate modes and various tropical, extratropical factors towards their variations.  </p>
+          <p> To know more about my research interests click here</p>
+        </div>
+
+        <!-- Publications Section -->
+        <div class="publications" id="publications">
+          <h2>Publications</h2>
+          <ul>
+            <li>Pratiksha P. Baruah, J.M. Neena, and E Suhas (2025): The Role of Tropical Synoptic-Scale Disturbances in Modulating the Strength of East Pacific Hadley Circulation, Journal of Geophysical Research: Atmospheres (Accepted).</li>
+            <li>Pratiksha P. Baruah, J.M. Neena: Understanding the variabilities in strength and extent of regional Hadley circulations (Manuscript under prep.)</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
