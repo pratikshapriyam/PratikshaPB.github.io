@@ -6,14 +6,19 @@
   <title>Pratiksha Priyam Baruah</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Poppins', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(to bottom,  #e0e0e0, #9e9e9e), url('forest-background.jpg') center/cover no-repeat;
+      background: linear-gradient(to bottom, #e0e0e0, #9e9e9e), url('forest-background.jpg') center/cover no-repeat;
       color: #333;
       line-height: 1.6;
       display: flex;
+      flex-direction: column;
     }
 
     .sidebar {
@@ -102,7 +107,7 @@
     }
 
     .profile .contact a:hover {
-      color: #6a1b9a;
+      color: #4a148c;
     }
 
     .content {
@@ -131,20 +136,18 @@
       content: '';
       width: 50px;
       height: 3px;
-      background: #0288d1;
+      background: #6a1b9a;
       position: absolute;
       bottom: -5px;
       left: 0;
     }
 
-    p {
+    p, ul {
       font-size: 1.2em;
       color: #555;
     }
 
     ul {
-      font-size: 1.2em;
-      color: #555;
       margin: 0;
       padding-left: 25px;
     }
@@ -165,6 +168,45 @@
 
     a:hover {
       text-decoration: underline;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 20px;
+        width: 100%;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .profile {
+        position: relative;
+        top: auto;
+      }
+
+      h2 {
+        font-size: 1.6em;
+      }
+
+      p, ul {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
@@ -191,14 +233,12 @@
 
       <!-- Content Sections -->
       <div class="content">
-        <!-- About Me and Research Section -->
         <div class="about" id="about">
           <h2>About Me</h2>
           <p>Welcome to my webpage! I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My PhD research primarily involves enhancing our understanding of the dynamics of regional Hadley Cells across different geographical domains. Particularly I investigate the influence of different large scale climate modes and various tropical, extratropical factors towards their variations.</p>
           <p>To know more about my research interests, <a href="research.html">click here</a>.</p>
         </div>
 
-        <!-- Publications Section -->
         <div class="publications" id="publications">
           <h2>Publications</h2>
           <ul>
