@@ -13,8 +13,8 @@
     }
 
     body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: linear-gradient(to bottom right, #004d40, #003d33);
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #1b5e20, #004d40);
       color: #fff;
       line-height: 1.6;
       overflow-x: hidden;
@@ -22,54 +22,48 @@
 
     /* Top Navbar */
     .topbar {
-      background-color: #001f4d;
+      background-color: #0d47a1;
       color: white;
       padding: 15px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: fixed;
+      position: sticky;
       top: 0;
-      width: 100%;
-      z-index: 1000;
+      z-index: 999;
     }
 
-    .topbar h1 {
-      font-size: 1.5rem;
+    .topbar .name {
+      font-size: 1.5em;
+      font-weight: 700;
     }
 
-    .topbar .nav-links {
+    .hamburger {
       display: none;
-    }
-
-    .topbar .hamburger {
-      display: flex;
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
     }
 
     .hamburger div {
-      width: 30px;
-      height: 4px;
-      background-color: #ddd;
-      border-radius: 5px;
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 2px;
     }
 
-    /* Sidebar Navigation (Mobile only) */
     .sidebar {
       position: fixed;
       top: 60px;
       left: -100%;
       width: 100%;
-      background-color: #001f4d;
-      padding: 10px 0;
+      background-color: #0d47a1;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      transition: left 0.3s ease-in-out;
-      z-index: 999;
+      text-align: center;
+      padding: 20px 0;
+      transition: left 0.3s ease;
+      z-index: 998;
     }
 
     .sidebar.show {
@@ -78,142 +72,129 @@
 
     .sidebar a {
       color: white;
+      padding: 10px 20px;
       text-decoration: none;
-      font-size: 1.2rem;
-      padding: 8px 20px;
-      border-radius: 5px;
+      font-size: 1.1em;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #1565c0;
     }
 
     .main {
-      margin-top: 80px;
-      padding: 20px;
+      padding: 30px 20px;
     }
 
     .container {
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .profile, .about, .publications {
-      background: #ffffff;
-      color: #222;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      flex-direction: column;
+      gap: 30px;
     }
 
     .profile {
-      flex: 1 1 300px;
-      max-width: 350px;
+      background: #2e7d32;
+      padding: 20px;
+      border-radius: 12px;
       text-align: center;
     }
 
     .profile img {
       width: 100%;
-      max-width: 220px;
-      border-radius: 2%;
-      margin-bottom: 10px;
+      max-width: 180px;
+      border-radius: 5%;
+      border: 3px solid white;
+      margin-bottom: 15px;
     }
 
     .profile .name {
-      font-size: 1.8rem;
+      font-size: 1.8em;
       font-weight: bold;
-      color: #004d40;
       margin: 10px 0;
     }
 
-    .contact p {
-      font-size: 1rem;
-      margin: 5px 0;
+    .profile .contact p {
+      margin: 6px 0;
     }
 
-    .contact a {
-      color: #004d40;
+    .profile .contact a {
+      color: #bbdefb;
       text-decoration: none;
     }
 
-    .contact a:hover {
+    .profile .contact a:hover {
       text-decoration: underline;
     }
 
-    .about {
-      flex: 2 1 500px;
+    .right-side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    .publications {
-      flex: 1 1 100%;
-      margin-top: 20px;
+    .about, .publications {
+      background: #1b5e20;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: justify;
     }
 
     h2 {
-      color: #004d40;
+      font-size: 1.6em;
+      color: #fff176;
       margin-bottom: 10px;
     }
 
-    p, ul {
-      text-align: justify;
-      color: #444;
+    ul {
+      padding-left: 20px;
     }
 
     li {
       margin-bottom: 10px;
     }
 
-    /* Desktop navbar links */
+    a {
+      color: #aed581;
+    }
+
+    /* Responsive Layout */
     @media (min-width: 768px) {
-      .topbar .hamburger {
-        display: none;
-      }
-
-      .topbar .nav-links {
-        display: flex;
-        gap: 20px;
-      }
-
-      .nav-links a {
-        color: white;
-        text-decoration: none;
-        font-size: 1rem;
-      }
-
-      .nav-links a:hover {
-        text-decoration: underline;
-      }
-
-      .sidebar {
-        display: none;
-      }
-
       .container {
-        flex-wrap: nowrap;
+        flex-direction: row;
         align-items: flex-start;
       }
 
       .profile {
-        margin-right: 20px;
+        flex: 1;
+      }
+
+      .right-side {
+        flex: 2;
       }
     }
 
-    @media (max-width: 767px) {
-      .about, .publications {
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        position: absolute;
+        top: 60px;
         width: 100%;
       }
     }
-
   </style>
 </head>
 <body>
 
-  <!-- Top Navbar -->
+  <!-- Top Navigation Bar -->
   <div class="topbar">
-    <h1>Pratiksha Priyam Baruah</h1>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="research.html">Research</a>
-      <a href="#misc">Miscellaneous</a>
-    </div>
+    <div class="name">Pratiksha Priyam Baruah</div>
     <div class="hamburger" id="hamburger">
       <div></div>
       <div></div>
@@ -221,7 +202,7 @@
     </div>
   </div>
 
-  <!-- Sidebar (for mobile) -->
+  <!-- Sidebar Navigation -->
   <div class="sidebar" id="sidebar">
     <a href="#">Home</a>
     <a href="research.html">Research</a>
@@ -231,7 +212,7 @@
   <!-- Main Content -->
   <div class="main">
     <div class="container">
-      <!-- Profile -->
+      <!-- Contact/Profile -->
       <div class="profile">
         <img src="profile.jpg" alt="Profile Image">
         <div class="name">Pratiksha Priyam Baruah</div>
@@ -241,31 +222,34 @@
         </div>
       </div>
 
-      <!-- About Me -->
-      <div class="about" id="about">
-        <h2>About Me</h2>
-        <p>I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working with <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My research explores the dynamics of regional Hadley Cells and how large-scale climate modes influence them.</p>
-        <p>To know more about my research interests, <a href="research.html">click here</a>.</p>
-      </div>
-    </div>
+      <!-- About + Publications -->
+      <div class="right-side">
+        <div class="about">
+          <h2>About Me</h2>
+          <p>I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My PhD research primarily involves enhancing our understanding of the dynamics of regional Hadley Cells across different geographical domains. Particularly I investigate the influence of different large-scale climate modes and various tropical, extratropical factors towards their variations.</p>
+          <p>To know more about my research interests, <a href="research.html">click here</a>.</p>
+        </div>
 
-    <!-- Publications -->
-    <div class="publications" id="publications">
-      <h2>Publications</h2>
-      <ul>
-        <li>Pratiksha P. Baruah, J.M. Neena, and E Suhas (2025): The Role of Tropical Synoptic-Scale Disturbances in Modulating the Strength of East Pacific Hadley Circulation, Journal of Geophysical Research: Atmospheres (Accepted).</li>
-        <li>Pratiksha P. Baruah, J.M. Neena: Understanding the variabilities in strength and extent of regional Hadley circulations (Manuscript under prep.)</li>
-      </ul>
+        <div class="publications">
+          <h2>Publications</h2>
+          <ul>
+            <li>Pratiksha P. Baruah, J.M. Neena, and E Suhas (2025): The Role of Tropical Synoptic-Scale Disturbances in Modulating the Strength of East Pacific Hadley Circulation, Journal of Geophysical Research: Atmospheres (Accepted).</li>
+            <li>Pratiksha P. Baruah, J.M. Neena: Understanding the variabilities in strength and extent of regional Hadley circulations (Manuscript under prep.)</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- JavaScript for Sidebar -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
+    const hamburger = document.getElementById("hamburger");
+    const sidebar = document.getElementById("sidebar");
 
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('show');
+    hamburger.addEventListener("click", () => {
+      sidebar.classList.toggle("show");
     });
   </script>
+
 </body>
 </html>
