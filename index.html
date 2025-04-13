@@ -178,38 +178,32 @@
     a:hover {
       text-decoration: underline;
     }
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
 
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 10px 0;
-      }
+  .main {
+    margin-left: 0;  /* ✅ FIXES overflow issue */
+    width: 100%;      /* ✅ Ensures full width */
+    padding: 20px;
+  }
 
-      .main {
-        margin-left: 0;
-        width: 100%;
-        padding: 20px;
-      }
+  .container {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
 
-      .container {
-        grid-template-columns: 1fr;
-        padding: 0 10px;
-      }
-
-      .profile img {
-        max-width: 160px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .profile img {
-        max-width: 140px;
-      }
-    }
+  .profile img {
+    max-width: 160px;
+  }
+}
+   
   </style>
 </head>
 <body>
