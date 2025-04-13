@@ -1,116 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pratiksha Priyam Baruah</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: linear-gradient(to bottom, #e0e0e0, #9e9e9e), url('forest-background.jpg') center/cover no-repeat;
-      background-attachment: fixed;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
       color: #333;
-      line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* Sidebar and Hamburger Menu Styles */
-    .sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 220px;
-      height: 100vh;
-      background-color: #6a1b9a;
-      color: white;
-      padding-top: 60px;
-      padding-left: 20px;
+    header {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      transition: transform 0.3s ease-in-out;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #6a1b9a;
+      padding: 15px 20px;
+      color: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
     }
 
-    .sidebar a {
+    header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
       color: white;
       text-decoration: none;
       font-size: 1.1em;
-      padding: 10px;
-      border-radius: 8px;
-      transition: background 0.3s;
     }
 
-    .sidebar a:hover {
-      background-color: #4a148c;
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .sidebar-mobile {
+      display: none;
+      flex-direction: column;
+      background-color: #6a1b9a;
+      padding: 15px 20px;
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .sidebar-mobile a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 0;
     }
 
     .main {
-      margin-left: 240px;
-      padding: 40px 20px;
-      width: calc(100% - 240px);
-      transition: margin-left 0.3s ease;
+      margin-top: 80px;
+      padding: 20px;
     }
 
-    /* Profile and Content Styling */
     .container {
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 20px;
+      max-width: 1200px;
       margin: 0 auto;
-      width: 100%;
-      max-width: 1500px;
     }
 
     .profile {
-      background: linear-gradient(135deg, #ffffff, #f0f4f8);
-      padding: 30px;
+      background: white;
+      padding: 20px;
       border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
       text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 100px;
     }
 
     .profile img {
       width: 100%;
-      max-width: 220px;
-      border-radius: 2%;
-      border: 5px solid #fff;
+      max-width: 200px;
+      border-radius: 10px;
       margin-bottom: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .profile img:hover {
-      transform: scale(1.05);
     }
 
     .profile .name {
-      font-size: 2.2em;
-      font-weight: 700;
+      font-size: 1.8em;
       color: #6a1b9a;
-      margin: 10px 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      font-weight: bold;
     }
 
-    .profile .contact p {
-      font-size: 1.1em;
-      margin: 8px 0;
-    }
-
-    .profile .contact a {
+    .contact a {
+      color: #6a1b9a;
       text-decoration: none;
-      color: #6a1b9a;
-      transition: color 0.3s ease;
-    }
-
-    .profile .contact a:hover {
-      color: #4a148c;
     }
 
     .content {
@@ -120,134 +130,74 @@
     }
 
     .about, .publications {
-      background: #ffffff;
+      background: white;
       padding: 20px;
       border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      border-left: 5px solid #6a1b9a;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     h2 {
-      font-size: 2em;
-      font-weight: 600;
       color: #6a1b9a;
-      margin-bottom: 15px;
-      position: relative;
+      font-size: 1.6em;
+      margin-bottom: 10px;
     }
 
-    h2::after {
-      content: '';
-      width: 50px;
-      height: 3px;
-      background: #9c27b0;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-    }
-
-    p, ul {
-      font-size: 1.2em;
+    p, li {
+      font-size: 1.1em;
+      line-height: 1.6;
       color: #555;
     }
 
     ul {
-      padding-left: 25px;
+      padding-left: 20px;
     }
 
-    li {
-      margin-bottom: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    li:hover {
-      transform: translateX(10px);
-    }
-
-    a {
-      color: #6a1b9a;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Hamburger Menu Styles */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 30px;
-      height: 4px;
-      background-color: white;
-      border-radius: 5px;
-    }
-
-    /* Media Queries */
     @media (max-width: 768px) {
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        top: 0;
-        left: -100%;
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 10px 0;
-      }
-
-      .main {
-        margin-left: 0;
-        width: 100%;
-        padding: 20px;
-      }
-
-      .container {
-        grid-template-columns: 1fr;
-        padding: 0 10px;
-      }
-
-      .profile img {
-        max-width: 160px;
+      nav {
+        display: none;
       }
 
       .hamburger {
         display: flex;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 999;
       }
 
-      .sidebar.show {
-        left: 0;
+      .sidebar-mobile.active {
+        display: flex;
       }
-    }
 
-    @media (max-width: 480px) {
-      .profile img {
-        max-width: 140px;
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .profile {
+        position: relative;
+        top: 0;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Hamburger Menu -->
-  <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
 
-  <!-- Sidebar Navigation -->
-  <div class="sidebar" id="sidebar">
+  <!-- Header -->
+  <header>
+    <div class="logo">Pratiksha Baruah</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Research</a>
+      <a href="#">Misc</a>
+    </nav>
+  </header>
+
+  <!-- Mobile Sidebar -->
+  <div class="sidebar-mobile" id="mobileMenu">
     <a href="#">Home</a>
-    <a href="research.html">Research</a>
-    <a href="#misc">Miscellaneous</a>
+    <a href="#">Research</a>
+    <a href="#">Misc</a>
   </div>
 
   <!-- Main Content -->
@@ -255,7 +205,7 @@
     <div class="container">
       <!-- Profile Section -->
       <div class="profile">
-        <img src="profile.jpg" alt="My Photo" />
+        <img src="profile.jpg" alt="My Photo">
         <div class="name">Pratiksha Priyam Baruah</div>
         <div class="contact">
           <p>Email: <a href="mailto:pratiksha.baruah@students.iiserpune.ac.in">pratiksha.baruah@students.iiserpune.ac.in</a></p>
@@ -263,21 +213,18 @@
         </div>
       </div>
 
-      <!-- Content Sections -->
+      <!-- Content Section -->
       <div class="content">
-        <!-- About Me and Research Section -->
-        <div class="about" id="about">
+        <div class="about">
           <h2>About Me</h2>
-          <p>Welcome to my webpage! I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My PhD research primarily involves enhancing our understanding of the dynamics of regional Hadley Cells across different geographical domains. Particularly I investigate the influence of different large scale climate modes and various tropical, extratropical factors towards their variations.</p>
-          <p>To know more about my research interests, <a href="research.html">click here</a>.</p>
+          <p>I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working with <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My work explores the dynamics of regional Hadley Cells across geographical domains and their connection to large-scale climate modes.</p>
         </div>
 
-        <!-- Publications Section -->
-        <div class="publications" id="publications">
+        <div class="publications">
           <h2>Publications</h2>
           <ul>
-            <li>Pratiksha P. Baruah, J.M. Neena, and E Suhas (2025): The Role of Tropical Synoptic-Scale Disturbances in Modulating the Strength of East Pacific Hadley Circulation, Journal of Geophysical Research: Atmospheres (Accepted).</li>
-            <li>Pratiksha P. Baruah, J.M. Neena: Understanding the variabilities in strength and extent of regional Hadley circulations (Manuscript under prep.)</li>
+            <li>Baruah, P. P., Neena, J. M., & Suhas, E. (2025). The Role of Tropical Synoptic-Scale Disturbances in Modulating the Strength of East Pacific Hadley Circulation. *Journal of Geophysical Research: Atmospheres* (Accepted).</li>
+            <li>Baruah, P. P., & Neena, J. M. Understanding regional Hadley circulation variability (In prep).</li>
           </ul>
         </div>
       </div>
@@ -285,12 +232,10 @@
   </div>
 
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('show');
-    });
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('active');
+    }
   </script>
 </body>
 </html>
