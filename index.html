@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pratiksha Priyam Baruah</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -13,220 +13,156 @@
     }
 
     body {
-      font-family: 'Poppins', Arial, sans-serif;
-      background: linear-gradient(to bottom right, #064d1d, #0d3a0e);
-      color: #fff;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #004d00, #001f00);
+      color: #f4f4f4;
       overflow-x: hidden;
     }
 
-    /* Hamburger Menu */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1001;
-    }
-
-.hamburger div {
-  width: 30px;
-  height: 4px;
-  background-color: #001f3f; /* Dark blue */
-  border-radius: 5px;
-}
-    
-    /* Sidebar Navigation */
-    .sidebar {
+    /* Top Nav Panel */
+    .topbar {
       position: fixed;
       top: 0;
       left: 0;
-      width: 220px;
-      height: 100vh;
-      background-color: #002147;
+      width: 100%;
+      height: 60px;
+      background-color: #00264d; /* Dark Blue */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      z-index: 1001;
       color: white;
-      padding-top: 60px;
-      padding-left: 20px;
+    }
+
+    .topbar .title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .hamburger {
       display: flex;
       flex-direction: column;
-      gap: 20px;
-      transition: transform 0.3s ease-in-out;
-      z-index: 999;
+      gap: 5px;
+      cursor: pointer;
     }
 
-    .sidebar a {
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #ffffff;
+      border-radius: 4px;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 60px;
+      left: -100%;
+      width: 200px;
+      height: calc(100vh - 60px);
+      background-color: #001933;
       color: white;
-      text-decoration: none;
-      font-size: 1.1em;
-      padding: 10px;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-
-    .sidebar a:hover {
-      background-color: #011f3f;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding-left: 20px;
+      transition: left 0.3s ease-in-out;
+      z-index: 1000;
     }
 
     .sidebar.show {
       left: 0;
     }
 
-    /* Main Content */
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
     .main {
-      margin-left: 240px;
-      padding: 40px 20px;
-      width: calc(100% - 240px);
-      transition: margin-left 0.3s ease;
+      margin-top: 80px;
+      padding: 20px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .container {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 20px;
-      max-width: 1400px;
-      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
     }
 
     .profile {
-      background: #fff;
-      color: #333;
-      padding: 30px;
-      border-radius: 15px;
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
       text-align: center;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
 
     .profile img {
-      width: 100%;
-      max-width: 220px;
-      border-radius: 4%;
-      border: 5px solid #fff;
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .profile img:hover {
-      transform: scale(1.05);
-    }
-
-    .profile .name {
-      font-size: 2.2em;
-      font-weight: 700;
-      color: #002147;
-      margin: 10px 0;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .profile .contact p {
-      font-size: 1.1em;
-      margin: 8px 0;
-    }
-
-    .profile .contact a {
-      text-decoration: none;
-      color: #002147;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .about, .publications {
-      background: #ffffff;
-      color: #333;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      border-left: 5px solid #002147;
-    }
-
-    .about p, .publications li {
-      text-align: justify;
-    }
-
-    h2 {
-      font-size: 2em;
-      font-weight: 600;
-      color: #002147;
-      margin-bottom: 15px;
-      position: relative;
-    }
-
-    h2::after {
-      content: '';
-      width: 50px;
-      height: 3px;
-      background: #004080;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-    }
-
-    p, ul {
-      font-size: 1.2em;
-    }
-
-    ul {
-      padding-left: 25px;
-    }
-
-    li {
+      width: 180px;
+      border-radius: 5%;
       margin-bottom: 10px;
     }
 
-    a {
+    .profile .name {
+      font-size: 1.8rem;
+      font-weight: bold;
       color: #004080;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .contact p {
+      margin: 5px 0;
     }
 
-    /* Responsive */
+    .content-section {
+      background-color: #f9f9f9;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .content-section h2 {
+      color: #003366;
+      margin-bottom: 15px;
+    }
+
+    .content-section p, .content-section ul {
+      text-align: justify;
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
     @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
+      .profile img {
+        width: 140px;
       }
 
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: absolute;
-        top: 0;
-        left: -100%;
-        flex-direction: column;
-        background-color: #002147;
-        padding: 20px;
+      .topbar .title {
+        font-size: 1rem;
       }
 
       .main {
-        margin-left: 0;
-        width: 100%;
-        padding: 20px;
-      }
-
-      .container {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar.show {
-        left: 0;
+        margin-top: 70px;
+        padding: 15px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Hamburger -->
-  <div class="hamburger" id="hamburger">
-    <div></div>
-    <div></div>
-    <div></div>
+
+  <!-- Top Bar with Name and Hamburger -->
+  <div class="topbar">
+    <div class="title">Pratiksha Priyam Baruah</div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
   </div>
 
   <!-- Sidebar Navigation -->
@@ -239,7 +175,6 @@
   <!-- Main Content -->
   <div class="main">
     <div class="container">
-      <!-- Profile Section -->
       <div class="profile">
         <img src="profile.jpg" alt="My Photo" />
         <div class="name">Pratiksha Priyam Baruah</div>
@@ -249,41 +184,34 @@
         </div>
       </div>
 
-      <!-- About and Publications -->
-      <div class="content">
-        <div class="about" id="about">
-          <h2>About Me</h2>
-          <p>Welcome to my webpage! I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My PhD research primarily involves enhancing our understanding of the dynamics of regional Hadley Cells across different geographical domains. Particularly I investigate the influence of different large scale climate modes and various tropical, extratropical factors towards their variations.</p>
-          <p>To know more about my research interests, <a href="research.html">click here</a>.</p>
-        </div>
+      <div class="content-section" id="about">
+        <h2>About Me</h2>
+        <p>
+          Welcome to my webpage! I am a 5th-year PhD student at 
+          <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of 
+          <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. 
+          My PhD research primarily involves enhancing our understanding of the dynamics of regional Hadley Cells across different geographical domains. Particularly I investigate the influence of different large scale climate modes and various tropical, extratropical factors towards their variations.
+        </p>
+        <p>To know more about my research interests, <a href="research.html">click here</a>.</p>
+      </div>
 
-        <div class="publications" id="publications">
-          <h2>Publications</h2>
-          <ul>
-            <li>Pratiksha P. Baruah, J.M. Neena, and E Suhas (2025): The Role of Tropical Synoptic-Scale Disturbances in Modulating the Strength of East Pacific Hadley Circulation, Journal of Geophysical Research: Atmospheres (Accepted).</li>
-            <li>Pratiksha P. Baruah, J.M. Neena: Understanding the variabilities in strength and extent of regional Hadley circulations (Manuscript under prep.)</li>
-          </ul>
-        </div>
+      <div class="content-section" id="publications">
+        <h2>Publications</h2>
+        <ul>
+          <li>Pratiksha P. Baruah, J.M. Neena, and E Suhas (2025): The Role of Tropical Synoptic-Scale Disturbances in Modulating the Strength of East Pacific Hadley Circulation, <em>Journal of Geophysical Research: Atmospheres</em> (Accepted).</li>
+          <li>Pratiksha P. Baruah, J.M. Neena: Understanding the variabilities in strength and extent of regional Hadley circulations (Manuscript under prep.)</li>
+        </ul>
       </div>
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- JS for Hamburger -->
   <script>
     const hamburger = document.getElementById('hamburger');
     const sidebar = document.getElementById('sidebar');
-    const sidebarLinks = sidebar.querySelectorAll('a');
 
     hamburger.addEventListener('click', () => {
       sidebar.classList.toggle('show');
-    });
-
-    sidebarLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          sidebar.classList.remove('show');
-        }
-      });
     });
   </script>
 </body>
