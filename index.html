@@ -20,6 +20,19 @@
       overflow-x: hidden;
     }
 
+    /* Hamburger Menu Styles (For Mobile) */
+    .hamburger {
+      display: none;  /* Initially hidden on desktop */
+      font-size: 30px;
+      color: #6a1b9a;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      top: 15px;
+      left: 20px;
+    }
+
+    /* Sidebar Navigation */
     .sidebar {
       width: 220px;
       background-color: #6a1b9a;
@@ -33,6 +46,7 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      transition: width 0.3s ease;
     }
 
     .sidebar a {
@@ -48,6 +62,7 @@
       background-color: #4a148c;
     }
 
+    /* Main Content */
     .main {
       margin-left: 240px;
       padding: 40px 20px;
@@ -64,23 +79,16 @@
       padding: 0 10px;
     }
 
-.profile {
-  background: linear-gradient(135deg, #ffffff, #f0f4f8);
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  position: sticky;
-  top: 40px;
-}
-
-/* Remove sticky on small screens */
-@media (max-width: 768px) {
-  .profile {
-    position: static;
-    top: auto;
-  }
-}
+    /* Profile Section */
+    .profile {
+      background: linear-gradient(135deg, #ffffff, #f0f4f8);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: sticky;
+      top: 40px;
+    }
 
     .profile img {
       width: 100%;
@@ -99,7 +107,6 @@
       font-size: 2.2em;
       font-weight: 700;
       color: #6a1b9a;
-      position: sticky;
       margin: 10px 0;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -120,6 +127,7 @@
       color: #4a148c;
     }
 
+    /* Content Section */
     .content {
       display: flex;
       flex-direction: column;
@@ -178,35 +186,62 @@
     a:hover {
       text-decoration: underline;
     }
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 10px 0;
-  }
 
-  .main {
-    margin-left: 0;  /* ✅ FIXES overflow issue */
-    width: 100%;      /* ✅ Ensures full width */
-    padding: 20px;
-  }
+    /* Mobile Specific Styles */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
 
-  .container {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
-  }
+      /* Sidebar for mobile */
+      .sidebar {
+        width: 0;  /* Initially hidden */
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background-color: #6a1b9a;
+        transition: width 0.3s ease;
+        padding-top: 40px;
+        padding-left: 20px;
+      }
 
-  .profile img {
-    max-width: 160px;
-  }
-}
-   
+      .sidebar a {
+        font-size: 1.2em;
+        padding: 10px;
+        display: block;
+        color: white;
+        text-decoration: none;
+      }
+
+      .sidebar a:hover {
+        background-color: #4a148c;
+      }
+
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+      }
+
+      .profile img {
+        max-width: 160px;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Hamburger Menu for Mobile -->
+  <div class="hamburger" onclick="toggleSidebar()">
+    &#9776;
+  </div>
+
   <!-- Sidebar Navigation -->
   <div class="sidebar">
     <a href="#">Home</a>
@@ -229,7 +264,7 @@
 
       <!-- Content Sections -->
       <div class="content">
-        <!-- About Me and Research Section -->
+        <!-- About Me Section -->
         <div class="about" id="about">
           <h2>About Me</h2>
           <p>Welcome to my webpage! I am a 5th-year PhD student at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. My PhD research primarily involves enhancing our understanding of the dynamics of regional Hadley Cells across different geographical domains. Particularly I investigate the influence of different large scale climate modes and various tropical, extratropical factors towards their variations.</p>
@@ -247,5 +282,18 @@
       </div>
     </div>
   </div>
+
+  <!-- JavaScript for Hamburger Menu Toggle -->
+  <script>
+    // Function to open and close the sidebar
+    function toggleSidebar() {
+      var sidebar = document.querySelector('.sidebar');
+      if (sidebar.style.width === '0px' || sidebar.style.width === '') {
+        sidebar.style.width = '220px';  // Open the sidebar
+      } else {
+        sidebar.style.width = '0';  // Close the sidebar
+      }
+    }
+  </script>
 </body>
 </html>
