@@ -64,15 +64,23 @@
       padding: 0 10px;
     }
 
-    .profile {
-      background: linear-gradient(135deg, #ffffff, #f0f4f8);
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      position: sticky;
-      top: 40px;
-    }
+.profile {
+  background: linear-gradient(135deg, #ffffff, #f0f4f8);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: sticky;
+  top: 40px;
+}
+
+/* Remove sticky on small screens */
+@media (max-width: 768px) {
+  .profile {
+    position: static;
+    top: auto;
+  }
+}
 
     .profile img {
       width: 100%;
