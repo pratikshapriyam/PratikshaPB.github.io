@@ -13,24 +13,22 @@
     }
 
     body {
-      font-family: 'Poppins', Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(to bottom right, #004d40, #003d33);
       color: #fff;
-      line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    /* Top Navbar */
     .topbar {
       background-color: #001f4d;
-      color: white;
       padding: 15px 20px;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: fixed;
       top: 0;
-      width: 100%;
+      left: 0;
+      right: 0;
       z-index: 1000;
     }
 
@@ -56,7 +54,6 @@
       border-radius: 5px;
     }
 
-    /* Sidebar Navigation (Mobile only) */
     .sidebar {
       position: fixed;
       top: 60px;
@@ -81,7 +78,6 @@
       text-decoration: none;
       font-size: 1.2rem;
       padding: 8px 20px;
-      border-radius: 5px;
     }
 
     .main {
@@ -89,45 +85,53 @@
       padding: 20px;
     }
 
-    .container {
+    .row {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    .profile, .about, .publications {
-      background: #ffffff;
-      color: #222;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      justify-content: space-between;
     }
 
     .profile {
+      flex: 0 0 40%;
+      background: white;
+      color: #222;
+      padding: 20px;
+      border-radius: 15px;
       text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .about {
+      flex: 0 0 58%;
+      background: white;
+      color: #222;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .publications {
+      background: white;
+      color: #222;
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
 
     .profile img {
       width: 100%;
-      max-width: 220px;
+      max-width: 200px;
       border-radius: 2%;
       margin-bottom: 10px;
     }
 
-    .profile .name {
+    .name {
       font-size: 1.8rem;
       font-weight: bold;
       color: #004d40;
-      margin: 10px 0;
-    }
-
-    .contact p {
-      font-size: 1rem;
-      margin: 5px 0;
+      margin-bottom: 10px;
     }
 
     .contact a {
@@ -144,9 +148,8 @@
       margin-bottom: 10px;
     }
 
-    p, ul {
-      text-align: justify;
-      color: #444;
+    ul {
+      margin-left: 20px;
     }
 
     li {
@@ -176,26 +179,17 @@
       .sidebar {
         display: none;
       }
-
-      .profile {
-        flex: 0 0 40%;
-        max-width: 40%;
-      }
-
-      .about {
-        flex: 0 0 60%;
-        max-width: 60%;
-      }
-
-      .publications {
-        flex: 1 1 100%;
-        margin-top: 20px;
-      }
     }
 
     @media (max-width: 767px) {
-      .profile, .about, .publications {
-        width: 100%;
+      .row {
+        flex-direction: column;
+      }
+
+      .profile,
+      .about,
+      .publications {
+        flex: 1 1 100%;
         max-width: 100%;
       }
     }
@@ -203,7 +197,7 @@
 </head>
 <body>
 
-  <!-- Top Navbar -->
+  <!-- Topbar -->
   <div class="topbar">
     <h1>Pratiksha Priyam Baruah</h1>
     <div class="nav-links">
@@ -218,19 +212,19 @@
     </div>
   </div>
 
-  <!-- Sidebar (for mobile) -->
+  <!-- Sidebar (mobile) -->
   <div class="sidebar" id="sidebar">
     <a href="#">Home</a>
     <a href="research.html">Research</a>
     <a href="#misc">Miscellaneous</a>
   </div>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <div class="main">
-    <div class="container">
+    <div class="row">
       <!-- Profile -->
       <div class="profile">
-        <img src="profile.jpg" alt="Profile Image">
+        <img src="profile.jpg" alt="Profile image">
         <div class="name">Pratiksha Priyam Baruah</div>
         <div class="contact">
           <p>Email: <a href="mailto:pratiksha.baruah@students.iiserpune.ac.in">pratiksha.baruah@students.iiserpune.ac.in</a></p>
@@ -238,22 +232,20 @@
         </div>
       </div>
 
-      <!-- About Me -->
-      <div class="about" id="about">
+      <!-- About -->
+      <div class="about">
         <h2>About Me</h2>
-        <p style="margin-bottom: 20px;">
+        <p>
           I am a 5th-year PhD student in the Earth and Climate Science department at 
           <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of 
           <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. 
           My PhD research focuses on understanding the variability of regional Hadley circulations and the factors modulating these variations, 
           including scale interactions and tropical-extratropical influences.
         </p>
-
-        <p style="margin-bottom: 20px;">
+        <p style="margin-top: 15px;">
           To know more about my research interests, <a href="research.html">click here</a>.
         </p>
-
-        <p style="margin-bottom: 20px;">
+        <p style="margin-top: 15px;">
           I am originally from Assam, India and completed my Integrated M.Sc in Physics from Dibrugarh University, Assam.
         </p>
       </div>
@@ -278,11 +270,9 @@
   <script>
     const hamburger = document.getElementById('hamburger');
     const sidebar = document.getElementById('sidebar');
-
     hamburger.addEventListener('click', () => {
       sidebar.classList.toggle('show');
     });
   </script>
 </body>
 </html>
-
