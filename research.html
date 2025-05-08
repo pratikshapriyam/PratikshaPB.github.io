@@ -16,42 +16,29 @@
             align-items: center;
         }
 
-        /* Navigation Bar */
-        nav {
-            background-color: #003d33; /* Dark green */
-            width: 100%;
-            padding: 15px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
+       <!-- Topbar -->
+  <div class="topbar">
+    <h1>Pratiksha Priyam Baruah</h1>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="research.html">Research</a>
+      <a href="#misc">Miscellaneous</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
+  <!-- Sidebar (mobile) -->
+  <div class="sidebar" id="sidebar">
+    <a href="#">Home</a>
+    <a href="research.html">Research</a>
+    <a href="#misc">Miscellaneous</a>
+  </div>
 
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 5px 10px;
-        }
-
-        nav ul li a:hover {
-            background-color: #004d40;
-            border-radius: 5px;
-        }
+      
 
         /* Research Main Container */
         .research-container {
