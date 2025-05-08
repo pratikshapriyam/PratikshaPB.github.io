@@ -1,26 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research | Pratiksha Priyam Baruah</title>
-    <style>
-        body {
-            font-family: 'Poppins', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: rgba(255, 255, 255, 0.9);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research | Pratiksha Priyam Baruah</title>
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: rgba(255, 255, 255, 0.9);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-       <!-- Topbar -->
+    /* Topbar styles */
+    .topbar {
+      width: 100%;
+      background: #004d40;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .topbar h1 {
+      margin: 0;
+      font-size: 1.5em;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 60px;
+      right: -200px;
+      width: 200px;
+      background-color: #004d40;
+      transition: right 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .sidebar.active {
+      right: 0;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+
+    /* Research Main Container */
+    .research-container {
+      width: 90%;
+      max-width: 1000px;
+      background: linear-gradient(to bottom right, #004d40, #003d33);
+      color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    /* Research Boxes */
+    .research-box {
+      width: 90%;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .research-box:nth-child(odd) {
+      flex-direction: row;
+    }
+
+    .research-box:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .research-text {
+      width: 60%;
+      padding: 20px;
+    }
+
+    .research-img {
+      width: 40%;
+      text-align: center;
+    }
+
+    .research-img img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .caption {
+      font-size: 0.9em;
+      color: gray;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: purple;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: black;
+    }
+
+    @media (max-width: 768px) {
+      .research-box {
+        flex-direction: column !important;
+        text-align: center;
+      }
+
+      .research-text,
+      .research-img {
+        width: 100%;
+      }
+
+      .research-img img {
+        max-width: 80%;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Topbar -->
   <div class="topbar">
     <h1>Pratiksha Priyam Baruah</h1>
     <div class="nav-links">
-      <a href="#">Home</a>
+      <a href="index.html">Home</a>
       <a href="research.html">Research</a>
       <a href="#misc">Miscellaneous</a>
     </div>
@@ -31,173 +198,74 @@
     </div>
   </div>
 
-  <!-- Sidebar (mobile) -->
+  <!-- Sidebar (for mobile) -->
   <div class="sidebar" id="sidebar">
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
     <a href="#misc">Miscellaneous</a>
   </div>
 
-      
+  <!-- Research Main Container -->
+  <div class="research-container">
+    <h1>Key research highlights</h1>
 
-        /* Research Main Container */
-        .research-container {
-            width: 90%;
-            max-width: 1000px;
-            background: linear-gradient(to bottom right, #004d40, #003d33);
-            color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            padding: 40px;
-            margin-top: 100px; /* Adjusted to accommodate fixed navbar */
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        /* Research Boxes */
-        .research-box {
-            width: 90%;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 20px auto;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Alternating Layouts */
-        .research-box:nth-child(odd) {
-            flex-direction: row;
-        }
-
-        .research-box:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-
-        .research-text {
-            width: 60%;
-            padding: 20px;
-        }
-
-        .research-img {
-            width: 40%;
-            text-align: center;
-        }
-
-        .research-img img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .caption {
-            font-size: 0.9em;
-            color: gray;
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        h2 {
-            font-size: 1.5em;
-            color: purple;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-            color: black;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .research-box {
-                flex-direction: column !important;
-                text-align: center;
-            }
-
-            .research-text,
-            .research-img {
-                width: 100%;
-            }
-
-            .research-img img {
-                max-width: 80%;
-            }
-        }
-
-    </style>
-</head>
-<body>
-
- 
-
-    <!-- Research Main Container -->
-    <div class="research-container">
-        <h1>Key research highlights</h1>
-
-        <!-- Research Box 1: Hadley Circulation Dynamics -->
-        <div class="research-box">
-            <div class="research-text">
-                <h2>1.Hadley circulation exhibits prominent variability from region-to-region</h2>
-                <p> Most of the studies till date have concentrated on studying the variability and trends in the strength and extent of the global mean Hadley Circulation (HC), which may not often reflect the region-to-region differences in the HC. There are several unanswered questions pertaining to the characteristics of the various regional HCs. 
-                    In this study we provide a comprehensive analysis of the regional HCs across six distinct geographic domains.
-               
-                </p>
-                <p>
-                  Reference:  <b><i> Pratiksha & Neena (2023), <a href="https://ui.adsabs.harvard.edu/abs/2023AGUFM.A21J2432B/abstract/" target="_blank"> AGU Fall Meeting Abstract</a>
-                  </i></b>
-                  </p>
-            </div>
-            <div class="research-img">
-                <img src="reghc_corr_djf.png" alt="Hadley Circulation">
-                <div class="caption">Figure 1: Schematic of the Hadley Cell</div>
-            </div>
-        </div>
-
-        <!-- Research Box 2: Role of tropical eddies in modulating the strength of Hadley circulation  (Image on Left) -->
-        <div class="research-box">
-            <div class="research-text">
-                <h2>2. Tropical eddies play a crucial role in modulating the strength of regional Hadley circulation</h2>
-                <p>
-                  In this work, we explore how deep convection triggered by low-level convergence associated with Mixed Rossby-Gravity waves plays a key role in modulating the strength of the East Pacific Hadley circulation.
-                </p>
-                <p>  
-                 
-                Reference:  <b><i> Pratiksha et al. 2025, JGR: Atmospheres
-          <a href="https://doi.org/10.1029/2024JD042980" target="_blank">https://doi.org/10.1029/2024JD042980</a>
-             </i></b>
-                </p>
-            </div>
-            <div class="research-img">
-                <img src="mrg_fig.png" alt="Mixed Rossby-Gravity Waves">
-         
-            </div>
-        </div>
-
-        <!-- Research Box 3: Role of Moist Convection -->
-        <div class="research-box">
-            <div class="research-text">
-                <h2>3. Influence of extratropical circulation on strength and extent of regional Hadley circulations</h2>
-                <p>
-                   The occurence of westerly wind ducts over the eastern Pacific and Atlantic during boreal winter enables potential vorticity intrusions from the extratropics into the tropics.
-                    We aim to investigate how these extratropical intrusions influence the mass flux, as well as the strength and extent of regional Hadley circulations. 
-                </p>
-               
-            </div>
-            <div class="research-img">
-                <img src="waf.png" alt="Moist Convection">
-                <div class="caption">Figure 3: Moist convection process in the tropics</div>
-            </div>
-        </div>
-
+    <!-- Research Box 1 -->
+    <div class="research-box">
+      <div class="research-text">
+        <h2>1. Hadley circulation exhibits prominent variability from region-to-region</h2>
+        <p>
+          Most of the studies till date have concentrated on studying the variability and trends in the strength and extent of the global mean Hadley Circulation (HC), which may not often reflect the region-to-region differences in the HC. There are several unanswered questions pertaining to the characteristics of the various regional HCs. In this study we provide a comprehensive analysis of the regional HCs across six distinct geographic domains.
+        </p>
+        <p>
+          Reference: <b><i> Pratiksha & Neena (2023), <a href="https://ui.adsabs.harvard.edu/abs/2023AGUFM.A21J2432B/abstract/" target="_blank">AGU Fall Meeting Abstract</a></i></b>
+        </p>
+      </div>
+      <div class="research-img">
+        <img src="reghc_corr_djf.png" alt="Hadley Circulation">
+        <div class="caption">Figure 1: Schematic of the Hadley Cell</div>
+      </div>
     </div>
 
+    <!-- Research Box 2 -->
+    <div class="research-box">
+      <div class="research-text">
+        <h2>2. Tropical eddies play a crucial role in modulating the strength of regional Hadley circulation</h2>
+        <p>
+          In this work, we explore how deep convection triggered by low-level convergence associated with Mixed Rossby-Gravity waves plays a key role in modulating the strength of the East Pacific Hadley circulation.
+        </p>
+        <p>
+          Reference: <b><i> Pratiksha et al. 2025, JGR: Atmospheres <a href="https://doi.org/10.1029/2024JD042980" target="_blank">https://doi.org/10.1029/2024JD042980</a></i></b>
+        </p>
+      </div>
+      <div class="research-img">
+        <img src="mrg_fig.png" alt="Mixed Rossby-Gravity Waves">
+      </div>
+    </div>
+
+    <!-- Research Box 3 -->
+    <div class="research-box">
+      <div class="research-text">
+        <h2>3. Influence of extratropical circulation on strength and extent of regional Hadley circulations</h2>
+        <p>
+          The occurrence of westerly wind ducts over the eastern Pacific and Atlantic during boreal winter enables potential vorticity intrusions from the extratropics into the tropics. We aim to investigate how these extratropical intrusions influence the mass flux, as well as the strength and extent of regional Hadley circulations.
+        </p>
+      </div>
+      <div class="research-img">
+        <img src="waf.png" alt="Moist Convection">
+        <div class="caption">Figure 3: Moist convection process in the tropics</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for hamburger toggle -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+
+    hamburger.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
+
