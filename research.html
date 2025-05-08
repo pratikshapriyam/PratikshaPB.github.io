@@ -16,18 +16,53 @@
             align-items: center;
         }
 
-    
+        /* Navigation Bar */
+        nav {
+            background-color: #003d33; /* Dark green */
+            width: 100%;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #004d40;
+            border-radius: 5px;
+        }
 
         /* Research Main Container */
         .research-container {
             width: 90%;
             max-width: 1000px;
-           background: linear-gradient(to bottom right, #004d40, #003d33);
+            background: linear-gradient(to bottom right, #004d40, #003d33);
             color: #fff;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             padding: 40px;
-            margin-top: 80px;
+            margin-top: 100px; /* Adjusted to accommodate fixed navbar */
             text-align: center;
         }
 
@@ -114,7 +149,14 @@
 </head>
 <body>
 
-
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <!-- Research Main Container -->
     <div class="research-container">
@@ -162,7 +204,7 @@
         <!-- Research Box 3: Role of Moist Convection -->
         <div class="research-box">
             <div class="research-text">
-                <h2>3. Role of Moist Convection</h2>
+                <h2>3.Extratropical circulation </h2>
                 <p>
                     Moist convection plays a crucial role in modulating large-scale atmospheric circulations. 
                     I study the mechanisms through which convective processes shape the Hadley cell dynamics.
@@ -181,5 +223,3 @@
 
 </body>
 </html>
-
-
