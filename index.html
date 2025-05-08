@@ -94,6 +94,9 @@
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
     }
 
     .profile, .about, .publications {
@@ -105,8 +108,6 @@
     }
 
     .profile {
-      flex: 1 1 300px;
-      max-width: 350px;
       text-align: center;
     }
 
@@ -138,15 +139,6 @@
       text-decoration: underline;
     }
 
-    .about {
-      flex: 2 1 500px;
-    }
-
-    .publications {
-      flex: 1 1 100%;
-      margin-top: 20px;
-    }
-
     h2 {
       color: #004d40;
       margin-bottom: 10px;
@@ -161,7 +153,6 @@
       margin-bottom: 10px;
     }
 
-    /* Desktop navbar links */
     @media (min-width: 768px) {
       .topbar .hamburger {
         display: none;
@@ -186,22 +177,28 @@
         display: none;
       }
 
-      .container {
-        flex-wrap: nowrap;
-        align-items: flex-start;
+      .profile {
+        flex: 0 0 40%;
+        max-width: 40%;
       }
 
-      .profile {
-        margin-right: 20px;
+      .about {
+        flex: 0 0 60%;
+        max-width: 60%;
+      }
+
+      .publications {
+        flex: 1 1 100%;
+        margin-top: 20px;
       }
     }
 
     @media (max-width: 767px) {
-      .about, .publications {
+      .profile, .about, .publications {
         width: 100%;
+        max-width: 100%;
       }
     }
-
   </style>
 </head>
 <body>
@@ -244,12 +241,21 @@
       <!-- About Me -->
       <div class="about" id="about">
         <h2>About Me</h2>
-        <p style="margin-bottom: 20px;">I am a 5th-year PhD student in the Earth and Climate Science department at <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. 
-        My PhD research focuses on understanding the variability of regional Hadley circulations and the factors modulating these variations, including scale interactions and tropical-extratropical influences.</p>
-      
-        <p style="margin-bottom: 20px;">To know more about my research interests, <a href="research.html">click here</a>.</p>
+        <p style="margin-bottom: 20px;">
+          I am a 5th-year PhD student in the Earth and Climate Science department at 
+          <a href="https://www.iiserpune.ac.in/" target="_blank">IISER Pune</a>, working under the supervision of 
+          <a href="https://www.iiserpune.ac.in/people/faculty-details/930" target="_blank">Dr. Neena Joseph Mani</a>. 
+          My PhD research focuses on understanding the variability of regional Hadley circulations and the factors modulating these variations, 
+          including scale interactions and tropical-extratropical influences.
+        </p>
 
-         <p style="margin-bottom: 20px;"> I am originally from Assam and completed my Integrated M.Sc in Physics from Dibrugarh University, Assam </p>
+        <p style="margin-bottom: 20px;">
+          To know more about my research interests, <a href="research.html">click here</a>.
+        </p>
+
+        <p style="margin-bottom: 20px;">
+          I am originally from Assam and completed my Integrated M.Sc in Physics from Dibrugarh University, Assam.
+        </p>
       </div>
     </div>
 
@@ -257,9 +263,14 @@
     <div class="publications" id="publications">
       <h2>Publications</h2>
       <ul>
-        <li>Pratiksha P. Baruah, J.M. Neena, and E Suhas (2025): The role of tropical synoptic‐scale disturbances in modulating the strength of east Pacific Hadley circulation. Journal of
-Geophysical Research: Atmospheres, 130, e2024JD042980. <a href="https://doi.org/10.1029/2024JD042980" target="_blank">https://doi.org/10.1029/2024JD042980</a> </li>
-        <li>Pratiksha P. Baruah, J.M. Neena: Understanding the variabilities in strength and extent of regional Hadley circulations (under prep.)</li>
+        <li>
+          Pratiksha P. Baruah, J.M. Neena, and E Suhas (2025): The role of tropical synoptic‐scale disturbances in modulating the strength of east Pacific Hadley circulation.
+          Journal of Geophysical Research: Atmospheres, 130, e2024JD042980.
+          <a href="https://doi.org/10.1029/2024JD042980" target="_blank">https://doi.org/10.1029/2024JD042980</a>
+        </li>
+        <li>
+          Pratiksha P. Baruah, J.M. Neena: Understanding the variabilities in strength and extent of regional Hadley circulations (under prep.)
+        </li>
       </ul>
     </div>
   </div>
@@ -274,3 +285,4 @@ Geophysical Research: Atmospheres, 130, e2024JD042980. <a href="https://doi.org/
   </script>
 </body>
 </html>
+
