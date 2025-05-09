@@ -1,18 +1,49 @@
+<style>
+  .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .image-box {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .image-box img {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 480px) {
+    .image-box img {
+      width: 100px;
+    }
+  }
+</style>
 
 <div class="misc-section">
   <h2>My Gallery</h2>
   <div class="image-gallery">
     <div class="image-box">
-      <img src="sc_day.jpg" alt="Embroidery Work">
+      <img src="sc_day.jpg" alt="Science Day 2024">
       <p>Science Day, 2024</p>
     </div>
     <div class="image-box">
-      <img src="egu.JPG" alt="Nature Trip">
-      <p>EGU,2025, Vienna, Austria</p>
+      <img src="egu.JPG" alt="EGU 2025, Vienna">
+      <p>EGU, 2025, Vienna, Austria</p>
     </div>
     <div class="image-box">
-      <img src="images/embroidery.jpg" alt="Handwork">
+      <img src="images/embroidery.jpg" alt="Detailed handwork">
       <p>Detailed handwork</p>
     </div>
   </div>
 </div>
+
