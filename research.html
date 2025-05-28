@@ -9,8 +9,8 @@
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f0f0f0;;
-      color: #fff;
+      background: #f0f0f0;
+      color: #000;  /* changed text color for readability */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -19,7 +19,7 @@
     /* Topbar styles */
     .topbar {
       width: 100%;
-      background-color:  #001f4d;
+      background-color: #004d40;  /* same greenish color as misc.html */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -44,6 +44,11 @@
       text-decoration: none;
       color: white;
       font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #80cbc4; /* subtle lighter teal on hover */
     }
 
     .hamburger {
@@ -63,13 +68,15 @@
     .sidebar {
       position: fixed;
       top: 60px;
-      right: -200px;
-      width: 200px;
+      right: -220px;
+      width: 220px;
       background-color: #004d40;
       transition: right 0.3s ease;
       display: flex;
       flex-direction: column;
-      padding: 10px;
+      padding: 15px;
+      box-shadow: -3px 0 6px rgba(0,0,0,0.2);
+      z-index: 999;
     }
 
     .sidebar.active {
@@ -79,30 +86,41 @@
     .sidebar a {
       color: white;
       text-decoration: none;
-      padding: 10px;
+      padding: 10px 5px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      transition: background-color 0.2s ease;
+    }
+
+    .sidebar a:hover {
+      background-color: #00695c;
     }
 
     /* Research Main Container */
     .research-container {
       width: 90%;
       max-width: 1000px;
-     background-color: #001f4d;
+      background-color: #ffffff;
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       padding: 40px;
       margin-top: 100px;
-      text-align: center;
+      text-align: left;
+      color: #000;
     }
 
     h1 {
       font-size: 2em;
       margin-bottom: 20px;
+      color: #004d40;
     }
 
     /* Research Boxes */
     .research-box {
       width: 90%;
-      background: white;
+      background: #e0f2f1;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
       padding: 20px;
@@ -145,14 +163,24 @@
 
     h2 {
       font-size: 1.5em;
-      color: purple;
+      color: #004d40;
       margin-bottom: 10px;
     }
 
     p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       line-height: 1.6;
-      color: black;
+    }
+
+    /* Link style inside research */
+    .research-text a {
+      color: #004d40;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .research-text a:hover {
+      color: #00796b;
     }
 
     @media (max-width: 768px) {
@@ -188,7 +216,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="research.html">Research</a>
-      <a href="mics.html">Miscellaneous</a>
+      <a href="misc.html">Miscellaneous</a>
     </div>
     <div class="hamburger" id="hamburger">
       <div></div>
@@ -201,7 +229,7 @@
   <div class="sidebar" id="sidebar">
     <a href="index.html">Home</a>
     <a href="research.html">Research</a>
-    <a href="#misc">Miscellaneous</a>
+    <a href="misc.html">Miscellaneous</a>
   </div>
 
   <!-- Research Main Container -->
@@ -267,4 +295,3 @@
   </script>
 </body>
 </html>
-
